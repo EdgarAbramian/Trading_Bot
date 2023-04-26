@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <title>Document</title>
+  </head>
+    <a class="logis" href="main.html">
+        <img class="logo" src="{% static 'images/logo.png' %}"/>
+        <h1 style="color: #6BB197">FastTrade</h1>
+
+    </a>
+    <div class="buttons"  >
+
+      <button  class="btn" >Recommend currency</button>
+      <button class="btn">Recommend to buy  </button>
+      <button class="btn">Recommend to sell </button>
+      <a href="{%url 'auto'%}"><button class="btn">  Autopilot mod   </button></a>
+
+
+{#      <form>#}
+{#        <input class="inputForm" placeholder="Enter Currency"#}
+{#            `type="text" id="pin" />#}
+{#      </form>#}
+
+    </div>
+
+{% endblock %}
+
