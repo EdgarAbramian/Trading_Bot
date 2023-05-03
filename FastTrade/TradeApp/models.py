@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+# class UserInfo(models.Model):
+#     api = models.CharField(max_length=70)
+#     secret = models.CharField(max_length=70)
+    
+
+
+
+    

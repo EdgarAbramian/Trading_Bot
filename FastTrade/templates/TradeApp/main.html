@@ -12,25 +12,27 @@
     <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
     <title>Document</title>
   </head>
-    <a class="logis" href="main.html">
+    <a class="logis" href="{%url 'main'%}">
         <img class="logo" src="{% static 'images/logo.png' %}"/>
-        <h1 style="color: #6BB197">FastTrade</h1>
-
     </a>
+    <div class="cargo">
+      <form action="{%url 'main'%}" class="inKey" method="post">
+        {% csrf_token %}
+        <label style="color: #44868d;font-size: 17px;" class="api">api key</label>
+        <input style="color: #ffffff;background-color: #1d1d1dba;"class="apiInput;" name="api">
+        <label style="color: #44868d;font-size: 17px;"class="secrt">Secret key</label>
+        <input style="color: #ffffff;background-color: #1d1d1dba;"class="secretInput" name="secret">
+        <button type="submit" class="send">send</button>
+      </form>
+  </div>
+
     <div class="buttons"  >
-
-      <button  class="btn" >Recommend currency</button>
-      <button class="btn">Recommend to buy  </button>
-      <button class="btn">Recommend to sell </button>
+      <a href="{%url 'rec'%}"><button  class="btn" >Recommend currency</button></a>
       <a href="{%url 'auto'%}"><button class="btn">  Autopilot mod   </button></a>
-
-
-{#      <form>#}
-{#        <input class="inputForm" placeholder="Enter Currency"#}
-{#            `type="text" id="pin" />#}
-{#      </form>#}
-
+      <a href="{%url 'auto'%}"><button class="btn">Recommend to buy  </button></a>
+      <a href="{%url 'auto'%}"><button class="btn">Recommend to sell </button></a>
     </div>
+    
 
 {% endblock %}
 

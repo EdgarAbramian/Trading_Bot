@@ -16,11 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from TradeApp.views import index_page,auto
+from TradeApp.views import index_page, auto, rec_short, LINK_TO_COIN,COIN_LINK,rec_long,rec
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page, name = 'main'),
-    path('auto.html', auto, name = 'auto'),
+    path('FastTrade/templates/TradeApp/auto.html', auto, name = 'auto'),
+    path('FastTrade/templates/TradeApp/short.html', rec_short, name = 'rec_short'),
+    path('FastTrade/templates/TradeApp/rec.html', rec_long, name = 'rec_long'),
+    path('FastTrade/templates/TradeApp/rec.html', rec, name = 'rec'),
 
-]
+    # path('FastTrade\templates\TradeApp\main.html', buy, name = 'buy'),
+    path(COIN_LINK, LINK_TO_COIN,name = 'LINK'),
+    ]
